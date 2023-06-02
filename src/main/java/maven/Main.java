@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	
-	
+	//CHECKSTYLE:OFF
 	public static void main(String[] args) {
 		
 		//expresion regular para validar nombre de ciudades
@@ -39,4 +39,5 @@ public class Main {
 		
 		
 	}
+	//CHECKSTYLE:ON
 }
