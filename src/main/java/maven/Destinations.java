@@ -1,11 +1,19 @@
+// Copyright (C) 2020
+// All rights reserved
 package maven;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Destinations {
+	
 	public static ArrayList<String> globalDestinationNames = new ArrayList<String>(Arrays.asList("New York City", "Paris"));
-	public static ArrayList<Float> globalDestinationPrice = new ArrayList<Float>(Arrays.asList(600f,500f));
+
+	public static ArrayList<Float> globalDestinationPrice = new ArrayList<Float>(Arrays.asList(600f, 500f));
+	/**
+	    * @param destination 
+	    * @return float
+	    */ 
 	
 	public static float getAddPriceDestination(String destination) {
 		for(int i = 0; i < globalDestinationNames.size(); i++) {

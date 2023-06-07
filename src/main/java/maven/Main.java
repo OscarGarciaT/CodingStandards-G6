@@ -1,10 +1,14 @@
+// Copyright (C) 2020
+// All rights reserved
 package maven;
 import java.util.regex.*;
 import java.util.Scanner;
 
 public class Main {
-	
-	
+	/**
+	    * @param args
+	    */
+	//CHECKSTYLE:OFF
 	public static void main(String[] args) {
 		
 		//expresion regular para validar nombre de ciudades
@@ -39,4 +43,5 @@ public class Main {
 		
 		
 	}
+	//CHECKSTYLE:ON
 }
