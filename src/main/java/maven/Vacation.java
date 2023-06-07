@@ -3,139 +3,146 @@
 package maven;
 
 public class Vacation {
-
+	// CONSTANTS
+	private static final int DURATION_PRICE = 200;
+	private static final int DEFAULT_COST = 1000;
+	private static final int SEVEN_DAYS = 7;
+	private static final int THIRTY_DAYS = 30;
+	private static final int TRAVELERS_LB = 1000;
+	private static final int TRAVELERS_UB = 1000;
+	private static final float FST_LEVEL_DCNT = 0.1f;
+	private static final float SND_LEVEL_DCNT = 0.2f;
+	// VARIABLES
 	private String destination;
-	
 	private int numberOfTravelers;
-	
 	private int duration;
-	
 	private float cost;
+
 	/**
-	    * @param destination
-	    * @param numberOfTravelers 
-	    * @param duration 
+	    * @param des
+	    * @param travelers
+	    * @param dur
 	    */
-	
-	public Vacation(String destination, int numberOfTravelers, int duration) {
-	    this.cost = 1000;
-	    this.destination = destination;
-	    this.numberOfTravelers = numberOfTravelers;
-	    this.duration = duration;
+
+	public Vacation(final String des, final int travelers, final int dur) {
+	    this.cost = DEFAULT_COST;
+	    this.destination = des;
+	    this.numberOfTravelers = travelers;
+	    this.duration = dur;
 	}
 	/**
-	    * @return destination 
+	    * @return destination
 	    */
 	public String getDestination() {
 		return destination;
 	}
 	/**
-	    * @param destination
+	    * @param newDestination
 	    */
-	
-	public void setDestination(String destination) {
-		this.destination = destination;
+
+	public void setDestination(final String newDestination) {
+		this.destination = newDestination;
 	}
 	/**
 	    * @return numberOfTravelers
 	    */
-	
+
 	public int getNumberOfTravelers() {
 		return numberOfTravelers;
 	}
 	/**
-	    * @param numberOfTravelers
+	    * @param newNumberOfTravelers
 	    */
-	
-	public void setNumberOfTravelers(int numberOfTravelers) {
-		this.numberOfTravelers = numberOfTravelers;
+
+	public void setNumberOfTravelers(final int newNumberOfTravelers) {
+		this.numberOfTravelers = newNumberOfTravelers;
 	}
 	/**
-	    * @return duration 
+	    * @return duration
 	    */
-	
+
 	public int getDuration() {
 		return duration;
 	}
 	/**
-	    * @param duration 
+	    * @param newDuration
 	    */
-	
-	public void setDuration(int duration) {
-		this.duration = duration;
+
+	public void setDuration(final int newDuration) {
+		this.duration = newDuration;
 	}
 	/**
 	    * @return cost
 	    */
-	
+
 	public float getCost() {
 		return cost;
 	}
 	/**
-	    * @return cost
-	    * @param cost
+	    * @param newCost
 	    */
-	
-	public float setCost(float cost) {
-		return this.cost = cost;
+
+	public void setCost(final float newCost) {
+		this.cost = newCost;
 	}
 	/**
 	    * @return new cost
 	    */
-	
+
 	public float getTotalForTrip() {
-		float additionalPriceForDestination = Destinations.getAddPriceDestination(this.destination);
+		float dPrice = Destinations.getAddPriceDestination(destination);
 		float discountFromTravelers = getDiscountFromTravelers();
 		float durationPrice = getDurationPrice();
-		
-		return (this.cost + additionalPriceForDestination + durationPrice) * discountFromTravelers ;
+		float totalPrice = (cost + dPrice + durationPrice);
+		return totalPrice * discountFromTravelers;
 	}
 	/**
 	    * @return duration price
 	    */
-	
+
 	private float getDurationPrice() {
 		float localDurationPrice = 0;
-		if(lessOrEqualThanSevenDays()) {
-			localDurationPrice = 200;
-		} else if ( moreOrEqualThanThirtyDays() || this.numberOfTravelers == 2) {
-			localDurationPrice = -200;
+		if (lessOrEqualThanSevenDays()) {
+			localDurationPrice = DURATION_PRICE;
 		}
-		
+		if (moreOrEqualThanThirtyDays() || numberOfTravelers == 2) {
+			localDurationPrice = -DURATION_PRICE;
+		}
+
 		return localDurationPrice;
 	}
-	
+
 	/**
 	    * @return duration price
 	    */
-	
+
 	private boolean lessOrEqualThanSevenDays() {
-		return this.duration <= 7;
+		return this.duration <= SEVEN_DAYS;
 	}
-	
+
 	/**
 	    * @return duration
 	    */
-	
+
 	private boolean moreOrEqualThanThirtyDays() {
-		return this.duration >= 30;
+		return this.duration >= THIRTY_DAYS;
 	}
-	
+
 	/**
 	    * @return totalDiscount
 	    */
 
 	private float getDiscountFromTravelers() {
 		float totalDiscount = 0;
-		
-		if (this.numberOfTravelers > 4 && this.numberOfTravelers < 10) {
-			totalDiscount = 0.1f;
-		} else if (this.numberOfTravelers >= 10) {
-			totalDiscount = 0.2f;
+
+		if (numberOfTravelers > TRAVELERS_LB && numberOfTravelers < TRAVELERS_UB) {
+			totalDiscount = FST_LEVEL_DCNT;
+		} else if (this.numberOfTravelers >= TRAVELERS_UB) {
+			totalDiscount = SND_LEVEL_DCNT;
 		}
-		
+
 		return 1 - totalDiscount;
 	}
-	
-	
+
+
 }
