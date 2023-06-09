@@ -1,0 +1,7 @@
+src/main/java/maven/AddOns.java:8:	UseUtilityClass:	UseUtilityClass: This utility class has a non-private constructor
+src/main/java/maven/AddOns.java:10:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/maven/AddOns.java:12:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/maven/Destinations.java:8:	UseUtilityClass:	UseUtilityClass: This utility class has a non-private constructor
+src/main/java/maven/Destinations.java:10:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/maven/Destinations.java:12:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/maven/Main.java:41:	LiteralsFirstInComparisons:	LiteralsFirstInComparisons: Position literals first in String comparisons
