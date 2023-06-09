@@ -2,6 +2,32 @@ src/main/java/maven/AddOns.java:8:	UseUtilityClass:	UseUtilityClass: This utilit
 src/main/java/maven/AddOns.java:10:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
 src/main/java/maven/AddOns.java:12:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
 src/main/java/maven/Destinations.java:8:	UseUtilityClass:	UseUtilityClass: This utility class has a non-private constructor
+src/main/java/maven/Destinations.java:10:	LongVariable:	LongVariable: Avoid excessively long variable names like globalDestinationNames
 src/main/java/maven/Destinations.java:10:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/maven/Destinations.java:12:	LongVariable:	LongVariable: Avoid excessively long variable names like globalDestinationPrice
 src/main/java/maven/Destinations.java:12:	LooseCoupling:	LooseCoupling: Avoid using implementation types like 'ArrayList'; use the interface instead
+src/main/java/maven/Destinations.java:21:	OnlyOneReturn:	OnlyOneReturn: A method should have only one exit point, and that should be the last statement in the method
+src/main/java/maven/Main.java:16:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'patternName' could be declared final
+src/main/java/maven/Main.java:17:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'patternNumbers' could be declared final
+src/main/java/maven/Main.java:19:	CloseResource:	CloseResource: Ensure that resources like this Scanner object are closed after use
+src/main/java/maven/Main.java:19:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'sc' could be declared final
+src/main/java/maven/Main.java:21:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'destino' could be declared final
+src/main/java/maven/Main.java:24:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'cantidadPasajeros' could be declared final
+src/main/java/maven/Main.java:27:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'cantidad' could be declared final
+src/main/java/maven/Main.java:29:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'verifyDestination' could be declared final
+src/main/java/maven/Main.java:30:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'verifyNumberTravelers' could be declared final
+src/main/java/maven/Main.java:30:	LongVariable:	LongVariable: Avoid excessively long variable names like verifyNumberTravelers
+src/main/java/maven/Main.java:31:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'verifyDays' could be declared final
+src/main/java/maven/Main.java:34:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'pasajeros' could be declared final
+src/main/java/maven/Main.java:35:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'dias' could be declared final
+src/main/java/maven/Main.java:36:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'v' could be declared final
 src/main/java/maven/Main.java:41:	LiteralsFirstInComparisons:	LiteralsFirstInComparisons: Position literals first in String comparisons
+src/main/java/maven/Main.java:43:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'option' could be declared final
+src/main/java/maven/Vacation.java:59:	LongVariable:	LongVariable: Avoid excessively long variable names like newNumberOfTravelers
+src/main/java/maven/Vacation.java:95:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'dPrice' could be declared final
+src/main/java/maven/Vacation.java:96:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'discountFromTravelers' could be declared final
+src/main/java/maven/Vacation.java:96:	LongVariable:	LongVariable: Avoid excessively long variable names like discountFromTravelers
+src/main/java/maven/Vacation.java:97:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'durationPrice' could be declared final
+src/main/java/maven/Vacation.java:98:	LocalVariableCouldBeFinal:	LocalVariableCouldBeFinal: Local variable 'totalPrice' could be declared final
+src/main/java/maven/Vacation.java:98:	UselessParentheses:	UselessParentheses: Useless parentheses.
+src/main/java/maven/Vacation.java:112:	LongVariable:	LongVariable: Avoid excessively long variable names like localDurationPrice

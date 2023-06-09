@@ -56,8 +56,8 @@ public class Vacation {
 	    * @param newNumberOfTravelers
 	    */
 
-	public void setNumberOfTravelers(final int newNumberOfTravelers) {
-		this.numberOfTravelers = newNumberOfTravelers;
+	public void setNumberOfTravelers(final int newNumTravelers) {
+		this.numberOfTravelers = newNumTravelers;
 	}
 	/**
 	    * @return duration
@@ -92,16 +92,16 @@ public class Vacation {
 	    */
 
 	public float getTotalForTrip() {
-		float dPrice = Destinations.getAddPriceDestination(destination);
-		float discountFromTravelers = getDiscountFromTravelers();
-		float durationPrice = getDurationPrice();
-		float totalPrice = (cost + dPrice + durationPrice + addOnTotalPrice*this.numberOfTravelers);
-		setCost(totalPrice * discountFromTravelers);
+		final float dPrice = Destinations.getAddPriceDestination(destination);
+		final float discountTravelers = getDiscountFromTravelers();
+		final float durationPrice = getDurationPrice();
+		final float totalPrice = cost + dPrice + durationPrice + addOnTotalPrice*this.numberOfTravelers;
+		setCost(totalPrice * discountTravelers);
 		return cost;
 	}
 	
 	public float sumAddOn(int option) {
-		this.addOnTotalPrice += (AddOns.getAddOn(option)*this.numberOfTravelers);
+		this.addOnTotalPrice += AddOns.getAddOn(option)*this.numberOfTravelers;
 		return this.addOnTotalPrice;
 	}
 	/**
@@ -109,15 +109,15 @@ public class Vacation {
 	    */
 
 	private float getDurationPrice() {
-		float localDurationPrice = 0;
+		float lclDurationPrice = 0;
 		if (lessOrEqualThanSevenDays()) {
-			localDurationPrice = DURATION_PRICE;
+			lclDurationPrice = DURATION_PRICE;
 		}
 		if (moreOrEqualThanThirtyDays() || numberOfTravelers == 2) {
-			localDurationPrice = -DURATION_PRICE;
+			lclDurationPrice = -DURATION_PRICE;
 		}
 
-		return localDurationPrice;
+		return lclDurationPrice;
 	}
 
 	/**

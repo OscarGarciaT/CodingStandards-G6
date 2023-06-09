@@ -4,12 +4,18 @@ package maven;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class AddOns {
+	
+	// Fixed
+	private AddOns() { }
 
-	private static ArrayList<String> globalAddOnNames = new ArrayList<String>(Arrays.asList("All-Inclusive Package", "Adventure Activities Package", "Spa and Wellness Package"));
+	// Fixed
+	private static List<String> globalAddOnNames = new ArrayList<String>(Arrays.asList("All-Inclusive Package", "Adventure Activities Package", "Spa and Wellness Package"));
 
-	private static ArrayList<Float> globalAddOnPrice = new ArrayList<Float>(Arrays.asList(200f, 150f, 100f));
+	// Fixed
+	private static List<Float> globalAddOnPrice = new ArrayList<Float>(Arrays.asList(200f, 150f, 100f));
 	
 	public static float getAddOn(final int option) {
 		globalAddOnNames.get(option-1);
