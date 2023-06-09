@@ -14,6 +14,7 @@ public class Vacation {
 	private static final float SND_LEVEL_DCNT = 0.2f;
 	// VARIABLES
 	private String destination;
+	private float addOnTotalPrice;
 	private int numberOfTravelers;
 	private int duration;
 	private float cost;
@@ -29,6 +30,7 @@ public class Vacation {
 	    this.destination = des;
 	    this.numberOfTravelers = travelers;
 	    this.duration = dur;
+	    this.addOnTotalPrice = 0;
 	}
 	/**
 	    * @return destination
@@ -86,15 +88,21 @@ public class Vacation {
 		this.cost = newCost;
 	}
 	/**
-	    * @return new cost
+	    * @return cost
 	    */
 
 	public float getTotalForTrip() {
 		float dPrice = Destinations.getAddPriceDestination(destination);
 		float discountFromTravelers = getDiscountFromTravelers();
 		float durationPrice = getDurationPrice();
-		float totalPrice = (cost + dPrice + durationPrice);
-		return totalPrice * discountFromTravelers;
+		float totalPrice = (cost + dPrice + durationPrice + addOnTotalPrice*this.numberOfTravelers);
+		setCost(totalPrice * discountFromTravelers);
+		return cost;
+	}
+	
+	public float sumAddOn(int option) {
+		this.addOnTotalPrice += (AddOns.getAddOn(option)*this.numberOfTravelers);
+		return this.addOnTotalPrice;
 	}
 	/**
 	    * @return duration price

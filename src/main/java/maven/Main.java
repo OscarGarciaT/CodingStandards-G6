@@ -26,8 +26,6 @@ public final class Main {
 		System.out.print("Ingrese la cantidad de dias: ");
 		String cantidad = sc.nextLine();
 
-		sc.close();
-
 		boolean verifyDestination = patternName.matcher(destino).find();
 		boolean verifyNumberTravelers = patternNumbers.matcher(cantidadPasajeros).find();
 		boolean verifyDays = patternNumbers.matcher(cantidad).find();
@@ -36,6 +34,21 @@ public final class Main {
 			int pasajeros = Integer.parseInt(cantidadPasajeros);
 			int dias = Integer.parseInt(cantidad);
 			Vacation v = new Vacation(destino, pasajeros, dias);
+			AddOns.showAddOns();
+			
+			System.out.print("Desea agregar un adicional? SI/NO ");
+			String respuesta = sc.nextLine();
+			while (respuesta.equals("SI")) {
+				System.out.print("Escriba el numero de opcion:");
+				int option = Integer.parseInt(sc.nextLine());
+				System.out.println("Valor adicional: "+v.sumAddOn(option));
+				System.out.print("Desea agregar un adicional? SI/NO ");
+				respuesta = sc.nextLine();
+				System.out.println();
+			}
+			
+			sc.close();
+			
 			System.out.println(v.getTotalForTrip());
 		} else {
 			System.out.println(-1);
